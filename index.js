@@ -2,10 +2,10 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT
 
-const db = require('better-sqlite3')('foobar.db', {});
+const features = require('cpu-features')();
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send(features)
 })
 
 app.listen(port, () => {
